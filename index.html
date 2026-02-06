@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You Латтонька❤️</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff607a, #ff92bf);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      background: rgba(254, 79, 152, 0.666);
+      padding: 60px;
+      border-radius: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 5em;
+    }
+    p {
+      font-size: 2.4em;
+    }
+    .heart {
+      font-size: 6em;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>Этот мини сайтик был сделан специально для тебя</h1>
+    <p>
+      Латтонька:3<br><br>
+      Cпасибо тебе большое что есть, ты лучшая девушка на свете😍<br>
+      И кстати с днем влюбленных нас :3, просто знай ты для меня очень много значишь, я тебя очень очень сильно люблю! И хочу провести с тобой всю жизнь!
+    </p>
+    <p><strong>Навеки твой Егорка 💕
+    </strong></p>
+    <!-- Tiny text at the bottom -->
+  <p style="
+      font-size: 0.8em;
+      color: rgba(255,255,255,0.7);
+      margin-top: 30px;
+  ">
+      И кстати, cправа сверху есть секретная кнопка только тццц!
+  </p>
+  </div>
+
+  <!-- SECRET BUTTON -->
+  <button id="secretBtn" style="
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 1em;
+      border-radius: 10px;
+      background-color: pink;
+      border: none;
+      cursor: pointer;
+  ">
+    Показат секретик
+  </button>
+
+  <!-- HIDDEN IMAGE -->
+  <img id="secretImg" src="koteki.png" style="
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      border: 5px solid white;
+      border-radius: 15px;
+  ">
+
+  <!-- SCRIPT TO TOGGLE IMAGE AND PLAY MUSIC -->
+  <script>
+    const btn = document.getElementById("secretBtn");
+    const img = document.getElementById("secretImg");
+    const music = new Audio("musica.mp3"); // your music file
+    music.volume = 0.05; // quiet
+
+    btn.addEventListener("click", () => {
+      const isHidden = img.style.display === "none";
+
+      if (isHidden) {
+        img.style.display = "block";
+        music.play(); // starts music on click
+        btn.textContent = "Спрятат"; // change button text
+      } else {
+        img.style.display = "none";
+        music.pause(); // stop music if hiding
+        btn.textContent = "Показат секретик";
+      }
+    });
+  </script>
+</body>
+</html>
